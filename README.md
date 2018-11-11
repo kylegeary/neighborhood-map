@@ -1,3 +1,0 @@
-# neighborhood-map
-
-Initial commit
