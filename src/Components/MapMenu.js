@@ -23,23 +23,23 @@ class MapMenu extends Component {
 
 	render() {
 		return (
-			<div>
+			<header>
 				<div className="map-nav-container">
 					<nav className="map-nav">
-						<button aria-label='sidebar Menu' tabIndex='0' className="menu-icon-container" onClick={this.onMenuClick}>
+						<button aria-label='sidebar Menu button' tabIndex='0' className="menu-icon-container" onClick={this.onMenuClick}>
 							<div className="menu-icon-bar"></div>
 							<div className="menu-icon-bar"></div>
 							<div className="menu-icon-bar"></div>
 						</button>
-						<div className="nav-title">
+						<div className="nav-title" role="heading">
 							<h1>Dive Bars</h1>
 							<h4>Kansas City, Missouri</h4>
 						</div>
 					</nav>
 				</div>
-				<div className="map-sidebar">
+				<div className="map-sidebar" aria-label="Sidebar with dive bar listings">
 					<div className="map-sidebar__wrapper">
-						<input type="text" aria-label='Search Filter' className="sidebar-input" placeholder="Which bar would you like?" onChange={(e) => this.props.onQuery(e.target.value)}></input>
+						<input type="text" aria-label="Search Filter" className="sidebar-input" placeholder="Which bar would you like?" onChange={(e) => this.props.onQuery(e.target.value)}></input>
 					</div>
 					<ul>
 						{this.props.places.map((place, index) => {
@@ -48,12 +48,12 @@ class MapMenu extends Component {
 								role='button'
 								aria-label='Place Location'
 								key={index}
-								onClick={() => this.props.setActiveMarker(place.name)}>{place.name}
+								onFocus={() => this.props.setActiveMarker(place.name)}>{place.name}
 							</li>
 						})}
 					</ul>
 				</div>
-			</div>
+			</header>
 		)
 	}
 }

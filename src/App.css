@@ -22,7 +22,7 @@
 }
 
 
-/* Top nav bar */
+/* Menu navigation bar */
 
 .map-nav-container {
   overflow: hidden;
@@ -74,7 +74,7 @@
   padding-bottom: 0;
   margin-bottom: 0.25rem;
 }
-/* Hamburger from W3 schools */
+/* based off the hamburger example from W3 schools */
 
 .menu-icon-container{
   margin-left: .2rem;
@@ -92,7 +92,7 @@
 }
 
 
-/* Sidebar */
+/* Map sidebar and input*/
 
 .map-sidebar {
   position: absolute;

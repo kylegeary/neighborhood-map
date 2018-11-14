@@ -16,7 +16,7 @@ class MapWrapper extends Component {
 		this.setState({ center: this.props.centerCoords.location })
 	}
 
-	// Set map bounds
+	// Sets the map bounds
 	setBounds = () => {
 		const bounds = new this.props.google.maps.LatLngBounds();
 		for (let place of this.props.places) {
@@ -25,7 +25,7 @@ class MapWrapper extends Component {
 		this.setState({ bounds });
 	}
 
-	// Display InfoWindow with marker data on click
+	// Displays the InfoWindow with marker data on click
 	onMarkerClick = (props, marker) => {
 		const place = this.props.places.filter((place) => place.name === props.title)
 		this.setState({
@@ -41,7 +41,7 @@ class MapWrapper extends Component {
 			height: '100%'
 		};
 		return (
-			<div>
+			<main id="map" role="application" aria-label="Map with dive bars">
 				<Map
 					google={this.props.google}
 					zoom={4}
@@ -67,23 +67,23 @@ class MapWrapper extends Component {
 
 					>
 						{!this.props.requestAvailable ? (
-							<div className="marker-card">
+							<figure className="marker-card" role="contentInfo">
 								<h1><a href={this.state.selectedPlace.url} target="_blank" rel="noopener noreferrer">{this.state.selectedPlace.name}</a></h1>
 								<p>{this.state.selectedPlace.street}</p>
 								<p>{this.state.selectedPlace.area}</p>
 								<h4>FourSquare API Request Limit Exceeded</h4>
-							</div>
+							</figure>
 						) : (
-								<div className="marker-card">
+								<figure className="marker-card" role="contentInfo">
 									<h1>{this.state.selectedPlace.name}</h1>
 									<img src={this.state.selectedPlace.img} alt={this.state.selectedPlace.name} />
 									<h3>Likes: {this.state.selectedPlace.likes}</h3>
-								</div>
+								</figure>
 							)
 						}
 					</InfoWindow>
 				</Map>
-			</div>
+			</main>
 		)
 	}
 }
