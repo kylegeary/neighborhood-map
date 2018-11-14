@@ -1,43 +1,137 @@
+/*
+3 - greys
+  Grey--low 4D4D4D
+  Grey--mid 999999
+  Grey--high E5E5E5
+
+3 - blues
+  Blue--low 004466
+  Blue--mid 0088CC
+  Blue--high 99DDFF
+
+3 - accents
+  Green--low 006644
+  Green--mid 00FFAA
+  Green--high 99FFDD
+*/
+
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+
+/* Top nav bar */
+
+.map-nav-container {
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.map-nav {
+  position: relative;
+  background: #0088CC;
+  display: flex;
+  padding: .8rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-title {
+  margin: auto;
+}
+
+.nav-title h1 {
+  margin: 0;
+  color: #E5E5E5;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.nav-title h4 {
+  margin: 0;
+  color: #E5E5E5
+}
+
+.marker-card {
+  color: #4D4D4D;
+  padding-bottom: 1rem;
+}
+
+.marker-card a {
+  color: #4D4D4D;
+}
+
+.marker-card p {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.marker-card h1 {
+  padding-bottom: 0;
+  margin-bottom: 0.25rem;
+}
+/* Hamburger from W3 schools */
+
+.menu-icon-container{
+  margin-left: .2rem;
+  cursor: pointer;
+  padding: 5px;
+  border: 0;
+  background-color: #0088CC;
+}
+
+.menu-icon-bar {
+  width: 35px;
+  height: 5px;
+  background-color: #E5E5E5;
+  margin: 6px 0;
+}
+
+
+/* Sidebar */
+
+.map-sidebar {
+  position: absolute;
+  width: 15.6rem;
+  margin-top: 5.7rem;
+  height: calc(100% - 5.75rem);
+  background-color: white;
+  transform: translateX(-15.625rem);
+  transition: transform 0.5s ease;
+  z-index: 3;
+}
+.map-sidebar__wrapper {
+  background-color: #0077B2;
+  margin: auto;
+}
+.sidebar-input {
+  font-size: 1rem;
+  margin: 1rem auto;
+  border:1px;
+  width: 80%;
+  border: 1px;
+  padding: 0.75rem;
+}
+
+.map-sidebar ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style: none;
+  padding: 0;
+
+}
+
+.map-sidebar li {
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.map-sidebar li:hover {
+  background-color: #00AAFF;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-#map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }

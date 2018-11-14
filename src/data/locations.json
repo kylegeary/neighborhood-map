@@ -1,0 +1,11 @@
+
+	{
+        "name": "The Ship",
+        "pos": {
+          "lat": 39.102021,
+          "lng": -94.599111
+		},
+        "street": "1217 Union Ave",
+        "area": "Kansas City, MO 64101",
+        "url": "https://www.theshipkc.com"
+	}
